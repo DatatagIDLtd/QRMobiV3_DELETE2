@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F054858D-7540-4B41-AA07-A3307B5A7597}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QRMobi</RootNamespace>
+    <AssemblyName>QRMobi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="bigmap.aspx" />
+    <Content Include="CesarECV\asset-button.png" />
+    <Content Include="CesarECV\Blue_Outer_Blank_80pc.png" />
+    <Content Include="CesarECV\cesar-logo.png" />
+    <Content Include="CesarECV\CESAR_Details_BUTTON.png" />
+    <Content Include="CesarECV\Digger.png" />
+    <Content Include="CesarECV\ecv-button.png" />
+    <Content Include="CesarECV\ECV.png" />
+    <Content Include="CesarECV\ECV3b.png" />
+    <Content Include="CesarECV\ECV4.png" />
+    <Content Include="CesarECV\ECV5.png" />
+    <Content Include="CesarECV\ecvimage.png" />
+    <Content Include="CesarECV\ECV_Details_BUTTON.png" />
+    <Content Include="CesarECV\Full.png" />
+    <Content Include="CesarECV\jcb.png" />
+    <Content Include="CesarECV\jcb540.png" />
+    <Content Include="CesarECV\Theft_Check.png" />
+    <Content Include="contact.html" />
+    <Content Include="csr.aspx" />
+    <Content Include="HireItAgain.aspx" />
+    <Content Include="Imagescsrm2\Asset.png" />
+    <Content Include="Imagescsrm2\Asset_Over.png" />
+    <Content Include="Imagescsrm2\bg.jpg" />
+    <Content Include="Imagescsrm2\Blank.png" />
+    <Content Include="Imagescsrm2\Box_Bottom.png" />
+    <Content Include="Imagescsrm2\CESAR_Datatag_Logo.png" />
+    <Content Include="Imagescsrm2\Contact.png" />
+    <Content Include="Imagescsrm2\Contact_Over.png" />
+    <Content Include="Imagescsrm2\Dealer.png" />
+    <Content Include="Imagescsrm2\Parts.png" />
+    <Content Include="Imagescsrm2\Report.png" />
+    <Content Include="Imagescsrm2\Safety.png" />
+    <Content Include="Imagescsrm2\Scan.png" />
+    <Content Include="Imagescsrm2\Scan_Over.png" />
+    <Content Include="Imagescsrm2\Service.png" />
+    <Content Include="Imagescsrm2\SignIn.png" />
+    <Content Include="Imagescsrm2\SignIn_Over.png" />
+    <Content Include="Imagescsrm2\stihl-stolen.png" />
+    <Content Include="Imagescsrm2\stihl.png" />
+    <Content Include="Imagescsrm2\User.png" />
+    <Content Include="ImagescsrmHire\aplant Hilti DD120 diamond drill.png" />
+    <Content Include="ImagescsrmHire\aplant.png" />
+    <Content Include="ImagescsrmHire\button-branch-details.png" />
+    <Content Include="ImagescsrmHire\button-website.png" />
+    <Content Include="ImagescsrmHire\elliott.png" />
+    <Content Include="ImagescsrmHire\gap Wacker Neuson WP1550.png" />
+    <Content Include="ImagescsrmHire\GAP-LOGO.png" />
+    <Content Include="ImagescsrmHire\hirestation lincoln electric outback 185 generator.png" />
+    <Content Include="ImagescsrmHire\hss breaker.png" />
+    <Content Include="ImagescsrmHire\hss hilti TE 3000-AVR breaker.png" />
+    <Content Include="ImagescsrmHire\HSS.png" />
+    <Content Include="ImagescsrmHire\jewson fox F7860 paddle mixer.png" />
+    <Content Include="ImagescsrmHire\Jewson.png" />
+    <Content Include="ImagescsrmHire\nationwide stihl BR500 blower.png" />
+    <Content Include="ImagescsrmHire\nationwide.png" />
+    <Content Include="ImagescsrmHire\speedy Belle PT1216 power float.png" />
+    <Content Include="ImagescsrmHire\Speedy.png" />
+    <Content Include="ImagescsrmHire\vp_hirestation.png" />
+    <Content Include="Imagescsrm\box-bottom.png" />
+    <Content Include="Imagescsrm\box-bottomold.png" />
+    <Content Include="Imagescsrm\box-top.png" />
+    <Content Include="Imagescsrm\brand-atlas.png" />
+    <Content Include="Imagescsrm\brand-belle.png" />
+    <Content Include="Imagescsrm\brand-blackdecker.png" />
+    <Content Include="Imagescsrm\brand-bosch.png" />
+    <Content Include="Imagescsrm\brand-cableavoidance.png" />
+    <Content Include="Imagescsrm\brand-dewalt.png" />
+    <Content Include="Imagescsrm\brand-hilti.png" />
+    <Content Include="Imagescsrm\brand-husqvarna.png" />
+    <Content Include="Imagescsrm\brand-makita.png" />
+    <Content Include="Imagescsrm\brand-milwaukee.png" />
+    <Content Include="Imagescsrm\brand-panasonic.png" />
+    <Content Include="Imagescsrm\brand-stihl.png" />
+    <Content Include="Imagescsrm\brand-wacker.png" />
+    <Content Include="Imagescsrm\button-theft-check.png" />
+    <Content Include="Imagescsrm\field-branch.png" />
+    <Content Include="Imagescsrm\field-hiretime.png" />
+    <Content Include="Imagescsrm\field-id-qr.png" />
+    <Content Include="Imagescsrm\field-vrm.png" />
+    <Content Include="Imagescsrm\GAP-Group_Logo.png" />
+    <Content Include="ImagesMaster\box-bottom-master.png" />
+    <Content Include="ImagesMaster\brand-bmw.png" />
+    <Content Include="ImagesMaster\brand-buell.png" />
+    <Content Include="ImagesMaster\brand-daelim.png" />
+    <Content Include="ImagesMaster\brand-ducati.png" />
+    <Content Include="ImagesMaster\brand-harley.png" />
+    <Content Include="ImagesMaster\brand-honda.png" />
+    <Content Include="ImagesMaster\brand-husqvarna.png" />
+    <Content Include="ImagesMaster\brand-indian.png" />
+    <Content Include="ImagesMaster\brand-kawasaki.png" />
+    <Content Include="ImagesMaster\brand-ktm.png" />
+    <Content Include="ImagesMaster\brand-piaggio.png" />
+    <Content Include="ImagesMaster\brand-suzuki.png" />
+    <Content Include="ImagesMaster\brand-sym.png" />
+    <Content Include="ImagesMaster\brand-triumph.png" />
+    <Content Include="ImagesMaster\brand-yamaha.png" />
+    <Content Include="ImagesMaster\button-dealer.png" />
+    <Content Include="ImagesMaster\button-found-it.png" />
+    <Content Include="ImagesMaster\button-hire-it.png" />
+    <Content Include="ImagesMaster\button-parts.png" />
+    <Content Include="ImagesMaster\button-racing.png" />
+    <Content Include="ImagesMaster\button-re-register.png" />
+    <Content Include="ImagesMaster\button-report-stolen.png" />
+    <Content Include="ImagesMaster\button-safety.png" />
+    <Content Include="ImagesMaster\button-servise.png" />
+    <Content Include="ImagesMaster\button-stolen.png" />
+    <Content Include="ImagesMaster\button-theft-check.png" />
+    <Content Include="ImagesMaster\button-user.png" />
+    <Content Include="ImagesMaster\button-warranty.png" />
+    <Content Include="ImagesMaster\contact.png" />
+    <Content Include="ImagesMaster\field-chassis.png" />
+    <Content Include="ImagesMaster\field-type.png" />
+    <Content Include="ImagesMaster\mastermx-banner.png" />
+    <Content Include="ImagesMaster\mastermx-logo.png" />
+    <Content Include="Images\NoImage.jpg" />
+    <Content Include="map.aspx" />
+    <Content Include="Master_found.html" />
+    <Content Include="Imagescsrm\bg-large.jpg" />
+    <Content Include="Imagescsrm\bg.jpg" />
+    <Content Include="Imagescsrm2\box_top.png" />
+    <Content Include="Imagescsrm\button-contact-supplier.png" />
+    <Content Include="Imagescsrm\button-dealer.png" />
+    <Content Include="Imagescsrm\button-found-it.png" />
+    <Content Include="Imagescsrm\button-hire-it.png" />
+    <Content Include="Imagescsrm\button-parts.png" />
+    <Content Include="Imagescsrm\button-report-stolen.png" />
+    <Content Include="Imagescsrm\button-safety.png" />
+    <Content Include="Imagescsrm\button-scan-it.png" />
+    <Content Include="Imagescsrm\button-servise.png" />
+    <Content Include="Imagescsrm\button-soon.png" />
+    <Content Include="Imagescsrm\button-stock-check.png" />
+    <Content Include="Imagescsrm\button-user.png" />
+    <Content Include="Imagescsrm\cesar-logo.png" />
+    <Content Include="Imagescsrm\contact.png" />
+    <Content Include="ImagesMaster\box-bottom.png" />
+    <Content Include="ImagesMaster\chassis_no.png" />
+    <Content Include="ImagesMaster\field-engine.png" />
+    <Content Include="ImagesMaster\ktm250.png" />
+    <Content Include="Imagescsrm\Milwaukee.png" />
+    <Content Include="Imagescsrm\Milwaukee-stolen.png" />
+    <Content Include="Imagescsrm\datatag-logo.png" />
+    <Content Include="Imagescsrm\field-colour.png" />
+    <Content Include="Imagescsrm\field-engine.png" />
+    <Content Include="Imagescsrm\field-id.png" />
+    <Content Include="Imagescsrm\field-make.png" />
+    <Content Include="Imagescsrm\field-model.png" />
+    <Content Include="Imagescsrm\field-serial.png" />
+    <Content Include="Imagescsrm\field-type.png" />
+    <Content Include="Imagescsrm\stihl-stolen.png" />
+    <Content Include="Imagescsrm\stihl.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS410-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS410.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS420-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS420.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS480i-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS480i.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS500i-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS500i.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS700-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS700.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS800-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TS800.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TSA230-stolen.png" />
+    <Content Include="Imagescsrm\stihl\stihl-TSA230.png" />
+    <Content Include="ImagesMaster\logo.png" />
+    <Content Include="ImagesMaster\master-logo.png" />
+    <Content Include="Images\QR.png" />
+    <Content Include="ImagesMaster\qr.aspx" />
+    <Content Include="Pages\NotFound.aspx" />
+    <Content Include="qrces.aspx" />
+    <Content Include="qrcsrm.aspx" />
+    <Content Include="qrcsrmHire.aspx" />
+    <Content Include="qr.aspx" />
+    <Content Include="qrcom.aspx" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\header_ani.gif" />
+    <Content Include="qrecv.aspx" />
+    <Content Include="qrice.aspx" />
+    <Content Include="qrdat.aspx" />
+    <Content Include="Images\qrstuff.png" />
+    <Content Include="RaceDetails.aspx" />
+    <Content Include="Standard\header.png" />
+    <Content Include="Standard\header_ani.gif" />
+    <Content Include="Styles\csrm.css" />
+    <Content Include="test.aspx" />
+    <Content Include="found.html" />
+    <Content Include="top.html" />
+    <Content Include="Images\header-art.png" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\Style.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="qrcyc.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bigmap.aspx.cs">
+      <DependentUpon>bigmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bigmap.aspx.designer.cs">
+      <DependentUpon>bigmap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Globals.cs" />
+    <Compile Include="Classes\Processes.cs" />
+    <Compile Include="csr.aspx.cs">
+      <DependentUpon>csr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="csr.aspx.designer.cs">
+      <DependentUpon>csr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HireItAgain.aspx.cs">
+      <DependentUpon>HireItAgain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HireItAgain.aspx.designer.cs">
+      <DependentUpon>HireItAgain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagesMaster\qr.aspx.cs">
+      <DependentUpon>qr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImagesMaster\qr.aspx.designer.cs">
+      <DependentUpon>qr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="map.aspx.cs">
+      <DependentUpon>map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="map.aspx.designer.cs">
+      <DependentUpon>map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotFound.aspx.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NotFound.aspx.designer.cs">
+      <DependentUpon>NotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrces.aspx.cs">
+      <DependentUpon>qrces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrces.aspx.designer.cs">
+      <DependentUpon>qrces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrcsrm.aspx.cs">
+      <DependentUpon>qrcsrm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrcsrm.aspx.designer.cs">
+      <DependentUpon>qrcsrm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrcsrmHire.aspx.cs">
+      <DependentUpon>qrcsrmHire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrcsrmHire.aspx.designer.cs">
+      <DependentUpon>qrcsrmHire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qr.aspx.cs">
+      <DependentUpon>qr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qr.aspx.designer.cs">
+      <DependentUpon>qr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrcom.aspx.cs">
+      <DependentUpon>qrcom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrcom.aspx.designer.cs">
+      <DependentUpon>qrcom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrecv.aspx.cs">
+      <DependentUpon>qrecv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrecv.aspx.designer.cs">
+      <DependentUpon>qrecv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrice.aspx.cs">
+      <DependentUpon>qrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrice.aspx.designer.cs">
+      <DependentUpon>qrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrdat.aspx.cs">
+      <DependentUpon>qrdat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrdat.aspx.designer.cs">
+      <DependentUpon>qrdat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceDetails.aspx.cs">
+      <DependentUpon>RaceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaceDetails.aspx.designer.cs">
+      <DependentUpon>RaceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="qrcyc.aspx.cs">
+      <DependentUpon>qrcyc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrcyc.aspx.designer.cs">
+      <DependentUpon>qrcyc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Browser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57735</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

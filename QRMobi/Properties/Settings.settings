@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QRMobi.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConProvider" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Microsoft.Jet.OLEDB.4.0</Value>
+    </Setting>
+    <Setting Name="ImageServerURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.datatag.mobi/images</Value>
+    </Setting>
+    <Setting Name="Interval" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
