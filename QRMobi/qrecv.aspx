@@ -526,7 +526,7 @@
                                                             <asp:Label ID="lbEngNo" runat="server" Text="-" CssClass="ecvLabel"></asp:Label>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr style="display:none">
                                                         <td class="auto-style19">DPF FITTED:</td>
                                                         <td class="ecvColValue">
                                                             <asp:Label ID="lbDPFFitted" runat="server" Text="-" CssClass="ecvLabel"></asp:Label>
