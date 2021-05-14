@@ -14,6 +14,7 @@ using System.Configuration;
 using System.CodeDom;
 using System.Web.Compilation;
 using System.Web.Security;
+using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
@@ -451,6 +452,12 @@ namespace QRMobi
                 else
                 {
                     conn.Close();
+
+                    string msg = "QR Scan from Cesar Micro using ID:" + key + " Code:" + code + " was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
 
                     Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
 

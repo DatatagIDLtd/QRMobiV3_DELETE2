@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
@@ -51,7 +52,7 @@ namespace QRMobi
             // KTM - Datatag registered default kit - MasterMX marketing version
             //  string key = "UK65A7AC";
             // Kawasaki (real database example)
-            //  string key = "UK00A4AD";
+            //  string key = "UK00A4ADZ";
             // Honda (real database example)
             //   string key = "UK12A3AS";
             // Triumph (real database example)
@@ -220,6 +221,12 @@ namespace QRMobi
                     //No Codes so just direct to default page
 
                     reader.Close();
+
+                    string msg = "QR Scan from Master Scheme using ID:" + key +" was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
 
                     Response.Redirect("http://masterscheme.org/");
                 }

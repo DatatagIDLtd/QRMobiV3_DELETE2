@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
@@ -94,6 +95,12 @@ namespace QRMobi
                 {
                    
                     conn.Close();
+
+                    string msg = "QR Scan from ICE Scheme using ID:" + key + " was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
 
                     //No Codes so just direct to default page
                     Response.Redirect(QRMobi.OnRedirectURL);

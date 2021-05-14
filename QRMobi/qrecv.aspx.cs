@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
@@ -64,7 +65,7 @@ namespace QRMobi
            
             //if (key == "" || key == null)
             //{
-            //    key = "A0000";
+            //    key = "A000Z";
             //    code = "4187F7D7-4A63-476C-B3B3-6ED554321C5A";
             //}
 
@@ -247,6 +248,12 @@ namespace QRMobi
                     //Response.Redirect(QRMobi.OnRedirectURL);
                     //Response.Redirect("http://www.datatag.mobi/cesarmicro/home.aspx?id=" + this.lbID.Text+"&source=H");
                     //Response.Redirect("http://www.datatag.mobi/cesarmicro/forms/home.aspx?id=" + key);
+
+                    string msg = "QR Scan from Cesar using ECVCode:" + key + " QR:" + code + " was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "ECVCode", key);
 
                     Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
 

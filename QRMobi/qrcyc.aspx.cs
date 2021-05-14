@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
@@ -146,6 +147,12 @@ namespace QRMobi
                 {
                    
                     conn.Close();
+
+                    string msg = "QR Scan from Cycle Scheme using ID:" + key + " Code:" + code + " was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
 
                     //No Codes so just direct to default page
                     Response.Redirect(QRMobi.OnRedirectURL);

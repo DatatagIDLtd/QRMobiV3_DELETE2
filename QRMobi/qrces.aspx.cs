@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
 using System.Web.UI.HtmlControls;
+using DTMyDatatag.Helpers;
+using System.Diagnostics;
 
 namespace QRMobi
 {
@@ -284,6 +286,19 @@ namespace QRMobi
 
                     //No Codes so just direct to default page
                     //Response.Redirect(QRMobi.OnRedirectURL);
+
+                    //EventTypeID = 401
+
+                    //EventSourceID = 20
+
+                    //EventAdviceID = 45
+                        
+                    string msg = "QR Scan from Cesar using CESARID:" + key + " Code:" + code + " was not located";
+
+                    var eventDataHelper = new EventDataHelper();
+
+                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
+
                     Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
                 }
             }
