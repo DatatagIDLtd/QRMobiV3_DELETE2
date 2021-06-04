@@ -245,6 +245,7 @@
     <Content Include="ImagesMaster\master-logo.png" />
     <Content Include="Images\QR.png" />
     <Content Include="ImagesMaster\qr.aspx" />
+    <Content Include="Pages\NoSystem.aspx" />
     <Content Include="Pages\NotFound.aspx" />
     <Content Include="qrces.aspx" />
     <Content Include="qrcsrm.aspx" />
@@ -253,6 +254,7 @@
     <Content Include="qrcom.aspx" />
     <Content Include="Images\header.png" />
     <Content Include="Images\header_ani.gif" />
+    <Content Include="qrpwc.aspx" />
     <Content Include="qrecv.aspx" />
     <Content Include="qrice.aspx" />
     <Content Include="qrdat.aspx" />
@@ -350,6 +352,13 @@
     <Compile Include="map.aspx.designer.cs">
       <DependentUpon>map.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NoSystem.aspx.cs">
+      <DependentUpon>NoSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NoSystem.aspx.designer.cs">
+      <DependentUpon>NoSystem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NotFound.aspx.cs">
       <DependentUpon>NotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -391,6 +400,13 @@
     </Compile>
     <Compile Include="qrcom.aspx.designer.cs">
       <DependentUpon>qrcom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrpwc.aspx.cs">
+      <DependentUpon>qrpwc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrpwc.aspx.designer.cs">
+      <DependentUpon>qrpwc.aspx</DependentUpon>
     </Compile>
     <Compile Include="qrecv.aspx.cs">
       <DependentUpon>qrecv.aspx</DependentUpon>

@@ -72,8 +72,8 @@ namespace QRMobi
             //key = "61AZ3M";
             //code = "C57896FE-6C4D-4A18-B898-8C81035934D0";
 
-        //key = "00AZ3H";
-        //code = "156420887";
+           // key = "33AP2L";
+           // code = "151553890";
 
         https://www.datatag.mobi/qrces.aspx?id=61AZ3M&code=C57896FE-6C4D-4A18-B898-8C81035934D0
 
@@ -119,6 +119,7 @@ namespace QRMobi
                 var cmd = new SqlCommand(SQLComm, conn);
 
                 SqlDataReader reader;
+                SqlDataReader reader2;
 
                 try
                 {
@@ -281,25 +282,40 @@ namespace QRMobi
                 }
                 else
                 {
+                    reader.Close();
+                    
+                    //No registration so check that there is at least a legacy kit.
 
-                    conn.Close();
+                    //Now check for ECV Information Available
+                    SQLComm = "SELECT CesarId from lvCESARCodes where CesarID = '" + key + "'";
 
-                    //No Codes so just direct to default page
-                    //Response.Redirect(QRMobi.OnRedirectURL);
+                    cmd.CommandText = SQLComm;
 
-                    //EventTypeID = 401
+                    reader = cmd.ExecuteReader();
 
-                    //EventSourceID = 20
+                    if (reader.HasRows)
+                    {
+                        //Found
 
-                    //EventAdviceID = 45
-                        
-                    string msg = "QR Scan from Cesar using CESARID:" + key + " Code:" + code + " was not located";
+                        conn.Close();
+                        Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
+                    }
+                    else
+                    {
 
-                    var eventDataHelper = new EventDataHelper();
+                        conn.Close();
 
-                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
+                        string msg = "QR Scan from Cesar using CESARID:" + key + " Code:" + code + " was not located in CESARCodes Table";
 
-                    Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
+                        var eventDataHelper = new EventDataHelper();
+
+                        eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
+
+                        Response.Redirect("~/Pages/NoSystem.aspx?ini=" + iniFile);
+
+                    }
+
+
                 }
             }
             else

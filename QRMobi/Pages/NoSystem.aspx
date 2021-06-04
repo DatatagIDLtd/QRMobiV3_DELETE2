@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NotFound.aspx.cs" Inherits="QRMobi.Pages.NotFound" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NoSystem.aspx.cs" Inherits="QRMobi.Pages.NoSystem" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -263,7 +263,7 @@
             <td class="style59" 
                 style="background-image: url('Imagescsrm/box-top.png'); background-repeat: no-repeat">
                 <div align="center">
-                    <h4 style="color:white;font-size:100px">QR data not available at this time.<br /> Please try again once the CESARID has been fully registered </h4>
+                    <h4 style="color:white;font-size:100px">QR data not available. This scan has been logged with technical support for further investigation</h4>
                 </div></td>
             <td class="style60">
                 

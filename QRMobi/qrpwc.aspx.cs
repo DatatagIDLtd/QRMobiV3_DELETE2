@@ -10,7 +10,7 @@ using DTMyDatatag.Helpers;
 
 namespace QRMobi
 {
-    public partial class Webcyc : System.Web.UI.Page
+    public partial class Webpwc : System.Web.UI.Page
     {
         Processes MyProcess = new Processes();
 
@@ -22,7 +22,7 @@ namespace QRMobi
             int ret;
             bool found = false;
 
-            ret = MyProcess.LoadIniFile("QRCycle.ini");
+            ret = MyProcess.LoadIniFile("QRPWC.ini");
 
             string url = "top.html";
             string fullURL = "window.open('" + url + "', '_self', '' );";
@@ -41,13 +41,10 @@ namespace QRMobi
                 Response.Write(er.Message);
             }
 
-            //string key = "C104A4AZ";
-            //string code = "101618291";
+            //string key = "DT06M2YB2B";
+            //string code = "302201557";
 
-            //string key = "C106A6SZ";
-            //string code = "101023028";
-
-            //http://localhost:62229/qrcyc.aspx?id=C104A4AZ&code=101618291
+            //http://localhost:62229/qrpwc.aspx?id=C104A4AZ&code=101618291
 
             //Get Params
             string key = Request.QueryString["id"];
@@ -55,9 +52,7 @@ namespace QRMobi
 
             if (key != "" && key != null)
             {
-                //string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "'";
-
-                string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "' or VisibleID2 = '" + key + "' and SecretCode2 = '" + code + "'";
+                string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number,SerialNum from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "'";
 
                 var cmd = new SqlCommand(SQLComm, conn);
 
@@ -71,7 +66,7 @@ namespace QRMobi
                 {
                     reader.Close();
 
-                    SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSecMU where IDNumber = '" + key + "' and SecretCode = '" + code + "'";
+                    SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number,SerialNum from vODVSecMU where IDNumber = '" + key + "' and SecretCode = '" + code + "'";
 
                     cmd = new SqlCommand(SQLComm, conn);
 
@@ -87,6 +82,13 @@ namespace QRMobi
                     string engine = reader["Engine_Number"].ToString().Trim();
                     string frame = reader["Frame_Number"].ToString().Trim();
                     string vinser = reader["VIN"].ToString().Trim();
+                    string ser = reader["SerialNum"].ToString().Trim();
+
+                    if (ser == "")
+                    {
+                        this.tbSerial.Visible = false;
+                        this.lbSerial.Visible = false;
+                    }
 
                     if (engine == "")
                     {
@@ -106,6 +108,7 @@ namespace QRMobi
                         this.lbVinSer.Visible = false;
                     }
 
+
                     this.lbID.Text = "ID";
                     this.lbMake.Text = "Make";
                     this.lbModel.Text = "Model";
@@ -113,6 +116,7 @@ namespace QRMobi
                     this.lbEngine.Text = "Engine No";
                     this.lbVinSer.Text = "Vin/Ser";
                     this.lbFrame.Text = "Frame Number";
+                    this.lbSerial.Text = "Serial Number";
 
                     this.tbMake.Text = reader["Make"].ToString().Trim();
                     this.tbModel.Text = reader["Model"].ToString().Trim();
@@ -120,6 +124,7 @@ namespace QRMobi
                     this.tbEngine.Text = engine;
                     this.tbVINSER.Text = vinser;
                     this.tbFrameNo.Text = frame;
+                    this.tbSerial.Text = ser;
 
                     this.tbType.Text = "";
 
@@ -150,14 +155,16 @@ namespace QRMobi
                 }
                 else
                 {
+
+                    reader.Close();
                    
                     conn.Close();
 
-                    string msg = "QR Scan from Cycle Scheme using ID:" + key + " Code:" + code + " was not located";
+                    string msg = "QR Scan from Standard Scheme using ID:" + key + " Code:" + code + " was not located";
 
                     var eventDataHelper = new EventDataHelper();
 
-                    eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
+                    //eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "IDNumber", key);
 
                     //No Codes so just direct to default page
                     Response.Redirect(QRMobi.OnRedirectURL);
