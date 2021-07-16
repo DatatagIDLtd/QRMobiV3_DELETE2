@@ -263,7 +263,7 @@
             <td class="style59" 
                 style="background-image: url('Imagescsrm/box-top.png'); background-repeat: no-repeat">
                 <div align="center">
-                    <h4 style="color:white;font-size:100px">QR data not available at this time.<br /> Please try again once the CESARID has been fully registered </h4>
+                    <h4 style="color:white;font-size:100px">Manufacture Supplied Data file incomplete </h4>
                 </div></td>
             <td class="style60">
                 

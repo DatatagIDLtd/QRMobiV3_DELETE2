@@ -57,7 +57,7 @@ namespace QRMobi
             {
                 //string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "'";
 
-                string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "' or VisibleID2 = '" + key + "' and SecretCode2 = '" + code + "'";
+                string SQLComm = "SELECT Make,Model,Colour,Engine_Number,VIN,Frame_Number from vODVSec where IDNumber = '" + key + "' and SecretCode = '" + code + "' or VisibleID2 = '" + key + "' and SecretCode2 = '" + code + "' or VisibleID3 = '" + key + "' and SecretCode3 = '" + code + "' or VisibleID4 = '" + key + "' and SecretCode4 = '" + code + "'";
 
                 var cmd = new SqlCommand(SQLComm, conn);
 
