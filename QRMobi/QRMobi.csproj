@@ -246,8 +246,10 @@
     <Content Include="Images\QR.png" />
     <Content Include="ImagesMaster\qr.aspx" />
     <Content Include="Pages\NoSystem.aspx" />
+    <Content Include="Pages\NotFoundVeh.aspx" />
     <Content Include="Pages\NotFound.aspx" />
     <Content Include="qrces.aspx" />
+    <Content Include="qrveh.aspx" />
     <Content Include="qrcsrm.aspx" />
     <Content Include="qrcsrmHire.aspx" />
     <Content Include="qr.aspx" />
@@ -359,6 +361,13 @@
     <Compile Include="Pages\NoSystem.aspx.designer.cs">
       <DependentUpon>NoSystem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NotFoundVeh.aspx.cs">
+      <DependentUpon>NotFoundVeh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\NotFoundVeh.aspx.designer.cs">
+      <DependentUpon>NotFoundVeh.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\NotFound.aspx.cs">
       <DependentUpon>NotFound.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -372,6 +381,13 @@
     </Compile>
     <Compile Include="qrces.aspx.designer.cs">
       <DependentUpon>qrces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qrveh.aspx.cs">
+      <DependentUpon>qrveh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qrveh.aspx.designer.cs">
+      <DependentUpon>qrveh.aspx</DependentUpon>
     </Compile>
     <Compile Include="qrcsrm.aspx.cs">
       <DependentUpon>qrcsrm.aspx</DependentUpon>

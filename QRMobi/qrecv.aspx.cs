@@ -48,7 +48,11 @@ namespace QRMobi
                 Response.Write(er.Message);
             }
 
+            //https://www.datatag.mobi/qrecv.aspx?id=A03XZ&code=798E5C0D-2229-47D3-9203-340476190603
+
             //https://www.datatag.mobi/qrecv.aspx?id=7A53C&code=BB36BB30-C3EF-4580-9AA0-38DDDD28FAF5
+
+            //https://www.datatag.mobi/qrecv.aspx?id=A03QE&code=E63EE8C6-1653-4853-8DCC-50A6927AECAD
 
             //https://alpha.datatag.mobi/qr/qrecv.aspx?id=A0000&code=4187F7D7-4A63-476C-B3B3-6ED554321C5A
 
@@ -62,11 +66,11 @@ namespace QRMobi
             string key = Request.QueryString["id"];
             string code = Request.QueryString["code"];
 
-           
+
             //if (key == "" || key == null)
             //{
-            //    key = "A000Z";
-            //    code = "4187F7D7-4A63-476C-B3B3-6ED554321C5A";
+            //    key = "A03XZ";
+            //    code = "798E5C0D-2229-47D3-9203-340476190603";
             //}
 
             if (key != "" && key != null)
@@ -108,6 +112,27 @@ namespace QRMobi
                     CesarQRCode = reader["CesarQRCode"].ToString();
 
                     InstallationID = reader["ECVInstallationID"].ToString().Trim();
+
+                    if (InstallationID.Trim() == "")
+                    {
+                        //Not all data available so close and abandon
+                        conn.Close();
+
+                        //No Codes so just direct to default page
+                        //Response.Redirect(QRMobi.OnRedirectURL);
+                        //Response.Redirect("http://www.datatag.mobi/cesarmicro/home.aspx?id=" + this.lbID.Text+"&source=H");
+                        //Response.Redirect("http://www.datatag.mobi/cesarmicro/forms/home.aspx?id=" + key);
+
+                        string msg = "QR Scan from Cesar using ECVCode:" + key + " QR:" + code + " was not located";
+
+                        var eventDataHelper = new EventDataHelper();
+
+                        eventDataHelper.SendNoExpectionEventData("Anonymous", "", msg, "ECVCode", key);
+
+                        Response.Redirect("~/Pages/NotFound.aspx?ini=" + iniFile);
+
+                    }
+
                     DPF = reader["DPFFitted"].ToString().Trim();
 
                     if (lbStage.Text == "E" && DPF=="False")

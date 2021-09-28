@@ -75,7 +75,7 @@ namespace QRMobi
            // key = "33AP2L";
            // code = "151553890";
 
-        https://www.datatag.mobi/qrces.aspx?id=61AZ3M&code=C57896FE-6C4D-4A18-B898-8C81035934D0
+      //  https://www.datatag.mobi/qrces.aspx?id=61AZ3M&code=C57896FE-6C4D-4A18-B898-8C81035934D0
 
             Guid x;
             bool UseQR = false;
