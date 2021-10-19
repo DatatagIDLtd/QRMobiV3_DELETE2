@@ -2,11 +2,103 @@
 using System.IO;
 using System.Data.SqlClient;
 using System.Net.Mail;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace QRMobi
 {
     public class Processes
     {
+
+        public int WriteAPILatLong(LatLongEntry MyLatLongEntry)
+        {
+
+            //Setup the Date and time. 
+            string date = DateTime.Now.ToShortDateString().ToString();
+            string time = DateTime.Now.ToLongTimeString().ToString();
+            string datetime = DateTime.Now.ToString("dd/MM/yyyy H:mm:ss");
+
+            //Call Search API
+
+            string EndPoint = Properties.Settings.Default.LatLongEndPoint;
+            string UserId = Properties.Settings.Default.UserID.Trim();
+            string Password = Properties.Settings.Default.Password.Trim();
+            string token = Properties.Settings.Default.Token.Trim();
+
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(EndPoint);
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+
+            httpWebRequest.Credentials = new NetworkCredential(UserId, Password);
+
+            using (var streamWriter = new
+
+            StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string json = new JavaScriptSerializer().Serialize(new
+                {
+
+                    Application = MyLatLongEntry.Application,
+                    ApplicationArea = MyLatLongEntry.ApplicationArea,
+                    CreatedBy = MyLatLongEntry.CreatedBy,
+                    DeviceDateTime = MyLatLongEntry.DeviceDateTime,
+                    DeviceID = MyLatLongEntry.DeviceID,
+                    DevicePermissionGiven = MyLatLongEntry.DevicePermissionGiven,
+                    DeviceUserID = MyLatLongEntry.DeviceUserID,
+                    IMEI = MyLatLongEntry.IMEI,
+                    IPAddress = MyLatLongEntry.IPAddress,
+                    Latitude = MyLatLongEntry.Latitude,
+                    Longitude = MyLatLongEntry.Longitude,
+                    LookupCode = MyLatLongEntry.LookupCode,
+                    MembershipPrefix = MyLatLongEntry.MembershipPrefix,
+                    PostCode = MyLatLongEntry.PostCode,
+                    QRCodeURL = MyLatLongEntry.QRCodeURL,
+                    SecurityCode = MyLatLongEntry.SecurityCode,
+                    SystemType = MyLatLongEntry.SystemType,
+                    UserGUID = MyLatLongEntry.UserGUID,
+                    UserName = MyLatLongEntry.UserName,
+                    WFStatus = MyLatLongEntry.WFStatus,
+                    WTW = MyLatLongEntry.WTW,
+                    Address = MyLatLongEntry.Address
+
+
+                });
+
+                //  \"\"   **** Dont delete this
+
+                string newjson = json.Replace("\"\"", "null");
+                try
+                {
+                    streamWriter.Write(newjson);
+                }
+                catch (Exception ee)
+                {
+                    //Failed
+                }
+
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            try
+            {
+                var httpResponse = httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                }
+            }
+            catch (Exception e)
+            {
+                string temp = e.Message;
+
+                // API server is not working so just move on
+            }
+
+            return 0;
+        }
+
         public string GetImageAssetURL(string make, string model)
         {
 

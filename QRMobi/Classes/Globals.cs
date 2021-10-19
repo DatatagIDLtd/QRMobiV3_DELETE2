@@ -16,6 +16,49 @@ namespace QRMobi
 
     }
 
+    public class LatLongEntry
+    {
+        public string Application { get; set; }
+        public string ApplicationArea { get; set; }
+        public string CreatedBy { get; set; }
+        public string DeviceDateTime { get; set; }
+        public string DeviceID { get; set; }
+        public string DevicePermissionGiven { get; set; }
+        public string DeviceUserID { get; set; }
+        public string IMEI { get; set; }
+        public string IPAddress { get; set; }
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string LookupCode { get; set; }
+        public string MembershipPrefix { get; set; }
+        public string PostCode { get; set; }
+        public string QRCodeURL { get; set; }
+        public string SecurityCode { get; set; }
+        public string SystemType { get; set; }
+        public string UserGUID { get; set; }
+        public string UserName { get; set; }
+        public string WFStatus { get; set; }
+        public string WTW { get; set; }
+        public string Address { get; set; }
+
+
+    }
+
+    public class AuditEntry
+    {
+        public string ActionSrc { get; set; }
+        public string Application { get; set; }
+        public string CreatedBy { get; set; }
+        public string DatabaseName { get; set; }
+        public string IDNumber { get; set; }
+        public string LastAction { get; set; }
+        public string MemberNum { get; set; }
+        public string MessageText { get; set; }
+        public string TableName { get; set; }
+
+
+    }
+
     static class QRMobi
     {
         //Application Parameters

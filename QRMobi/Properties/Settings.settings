@@ -11,5 +11,17 @@
     <Setting Name="Interval" Type="System.String" Scope="Application">
       <Value Profile="(Default)">2000</Value>
     </Setting>
+    <Setting Name="UserID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DTOPSAPIUser</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2z6S5n6n4S0n2l3M6x5f</Value>
+    </Setting>
+    <Setting Name="LatLongEndPoint" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://datatagit.com/port/Mobile/API-Mobile/api.rsc/DTMobile_dbo_usp_CreateGeoLocationEvent</Value>
+    </Setting>
+    <Setting Name="Token" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5x1S6d8z7X4w6b4S0v0y</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

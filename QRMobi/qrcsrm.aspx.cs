@@ -490,6 +490,8 @@ namespace QRMobi
             string stLat = String.Format("{0}", Request.Form["lat"]);
             string stAddress = String.Format("{0}", Request.Form["tbHIDAddress"]);
 
+            string USdatetime = DateTime.Now.ToString("MM-dd-yyyy H:mm:ss");
+
             string UserGUID = "";
             string PostCode = "";
 
@@ -514,6 +516,35 @@ namespace QRMobi
 
             Processes MyProc = new Processes();
             int ret = MyProc.WriteLongLatSP(AssetID, ECVCode, stLat, stLng, UserGUID, IPAddress, stAddress, PostCode, DeviceID);
+
+            //Send the same information as an API Call
+            LatLongEntry MyLatLong = new LatLongEntry();
+
+            MyLatLong.LookupCode = AssetID;
+            MyLatLong.Latitude = stLat;
+            MyLatLong.Longitude = stLng;
+            MyLatLong.IPAddress = IPAddress;
+            MyLatLong.Address = "";
+            MyLatLong.PostCode = "";
+            MyLatLong.SecurityCode = "";
+            MyLatLong.DeviceID = "";
+            MyLatLong.MembershipPrefix = "";
+            MyLatLong.WTW = "";
+            MyLatLong.WFStatus = "";
+            MyLatLong.SystemType = "";
+            MyLatLong.UserGUID = "00000000-0000-0000-0000-000000000000";
+            MyLatLong.UserName = "";
+            MyLatLong.QRCodeURL = "";
+            MyLatLong.DevicePermissionGiven = "True";
+            MyLatLong.Application = "";
+            MyLatLong.CreatedBy = "";
+            MyLatLong.IMEI = "";
+            MyLatLong.ApplicationArea = "";
+            MyLatLong.DeviceDateTime = USdatetime;
+            MyLatLong.DeviceUserID = "";
+
+
+            ret = MyProc.WriteAPILatLong(MyLatLong);
 
 
             if (this.tbHIDAddress.Text != "")
